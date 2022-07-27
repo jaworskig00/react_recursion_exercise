@@ -3,9 +3,30 @@ import RecursiveComponent from './RecursiveComponent';
 import useTimer from '../hooks/useTimer';
 
 // write components here
-const One = () => null;
-const Two = () => null;
-const Three = () => null;
+const One = ({children}) => {
+	return (
+		<div className='App-box'>
+			One
+			{children}
+		</div>
+	)
+};
+const Two = ({children}) => {
+	return (
+		<div className='App-box'>
+			Two
+			{children}
+		</div>
+	)
+};
+const Three = ({children}) => {
+	return (
+		<div className='App-box'>
+			Three
+			{children}
+		</div>
+	)
+};
 
 const components = [
 	One,

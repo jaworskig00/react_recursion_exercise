@@ -1,15 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 function RecursiveComponent(props) {
-  const {
-    components,
-  } = props;
-
+  const { components } = props;
+  const CurrentComponent = components[0];
+  
   return (
-    <div>
-      {/* invoke recursive method here */}
-    </div>
+    <>
+      <CurrentComponent>
+        {components.length > 1 && (
+          <RecursiveComponent components={components.slice(1)} />
+        )}
+      </CurrentComponent>
+    </>
   );
 }
 
